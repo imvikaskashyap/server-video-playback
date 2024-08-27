@@ -6,7 +6,11 @@ import { getVideoDurationInSeconds } from "get-video-duration";
 
 const addVideo = async (req, res) => {
   try {
-    const { title } = req.body;
+    const { title,description } = req.body;
+
+    if(!title && description ){
+      return res.status(400).json({ message: "title and description are required" });
+    }
 
     if (!req.file) {
       return res.status(400).json({ message: "No video uploaded" });
@@ -16,9 +20,9 @@ const addVideo = async (req, res) => {
 
     const videoUrl = await uploadOnCloudinary(videoUrlPath);
 
-    const duration = await getVideoDurationInSeconds(videoUrl.url);
+    const durationInSec = await getVideoDurationInSeconds(videoUrl.url);
 
-    // const duration = Math.floor(durationInSec);
+    const duration = Math.floor(durationInSec);
 
     // console.log(duration , "console on line 26")
 
@@ -30,6 +34,7 @@ const addVideo = async (req, res) => {
 
     const newVideo = new Video({
       title,
+      description,
       videoUrl: videoUrl.url,
       duration,
     });

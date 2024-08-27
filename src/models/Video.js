@@ -5,6 +5,11 @@ const videoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  description: {
+    type: String,
+    required: true,
+  },
+
   videoUrl: {
     type: String,
     required: true,
