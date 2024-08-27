@@ -81,7 +81,8 @@ This project is a video player application designed to provide a seamless experi
 
 ### Install Node Modules:
 ```bash
-npm i --force
+npm i 
 
 ## Start the Application:
-npm run start
+```bash
+npm run dev
