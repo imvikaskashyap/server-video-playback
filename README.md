@@ -84,5 +84,5 @@ This project is a video player application designed to provide a seamless experi
 npm i 
 
 ## Start the Application:
-```bash
+
 npm run dev
