@@ -27,11 +27,12 @@ app.use("/uploads", express.static(path.join("uploads")));
 // CORS ====>>> Cross Origin Resource Sharing
 app.use(
   cors({
-    origin: ["http://localhost:3000", "*"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
+    origin: '*',
+    methods: ["GET", "POST", "PUT", "DELETE"], 
+    credentials: true, 
   })
 );
+
 
 // Testing API
 app.get("/test", (req, res) => {

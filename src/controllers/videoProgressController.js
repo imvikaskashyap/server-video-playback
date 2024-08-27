@@ -55,7 +55,7 @@ export const getUserProgress = async (req, res) => {
   }
 };
 
-// Get specific video progress for a user
+// Get video progress for a user
 export const getVideoProgress = async (req, res) => {
   const { userId, videoId } = req.query;
 
